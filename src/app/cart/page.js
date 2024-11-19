@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItemFromCart } from "../redux/slices/cartSlice";
+import { removeItemFromCart, clearCart } from "../redux/slices/cartSlice";
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const total = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -15,7 +16,7 @@ const CartPage = () => {
   };
   //redux action to empty the cart
   const handleClearCart = () => {
-    cartItems.forEach((item) => dispatch(removeItemFromCart(item.id)));
+    dispatch(clearCart());
   };
   return (
     <div className="container mx-auto p-4">

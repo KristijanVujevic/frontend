@@ -23,16 +23,26 @@ async function connectToDatabase() {
   return client;
 }
 
-export async function GET() {
+export async function GET(req) {
+  const url = new URL(req.url);
+  const page = parseInt(url.searchParams.get("page"), 10) || 1;
+  const limit = parseInt(url.searchParams.get("limit"), 10) || 9;
+  const skip = (page - 1) * limit;
+
   try {
     const client = await connectToDatabase();
-    const db = client.db(MONGO_DB);
-    const products = await db.collection("products").find({}).toArray();
+    const db = client.db(process.env.MONGO_DB);
+    const productsCollection = db.collection("products");
 
-    // Return the list of products as a JSON response
-    return NextResponse.json(products);
+    const products = await productsCollection
+      .find({})
+      .skip(skip)
+      .limit(limit)
+      .toArray();
+    const totalCount = await productsCollection.countDocuments();
+
+    return NextResponse.json({ products, totalCount });
   } catch (error) {
-    console.error("Failed to fetch products:", error);
     return NextResponse.json(
       { error: "Failed to fetch products" },
       { status: 500 }
