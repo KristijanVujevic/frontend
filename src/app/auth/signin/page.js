@@ -1,13 +1,49 @@
 "use client";
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter for client-side navigation
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(""); // To handle any login errors
 
-  const handleSubmit = (e) => {
+  const router = useRouter(); // Initialize the useRouter hook
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle sign in logic here
+
+    // Reset error before new submission
+    setError("");
+
+    try {
+      // Send POST request to /signin API endpoint
+      const response = await fetch("/api/users/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      // Parse the response
+      const data = await response.json();
+
+      if (response.ok) {
+        // If the login is successful, store the JWT token (and user info, if necessary)
+        localStorage.setItem("token", data.token);
+
+        // Redirect to a protected page (e.g., /products) using the router
+        router.push("/products");
+      } else {
+        // If login fails, set the error message
+        setError(data.error || "Login failed");
+      }
+    } catch (err) {
+      // Handle general errors (like network issues)
+      setError("An unexpected error occurred. Please try again.");
+      console.error("Error during login:", err);
+    }
   };
 
   return (
@@ -16,6 +52,8 @@ const SignIn = () => {
         <h2 className="text-2xl font-bold text-center text-blue-700">
           Sign In
         </h2>
+        {error && <p className="text-red-600 text-center">{error}</p>}{" "}
+        {/* Display error if exists */}
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>

@@ -1,12 +1,15 @@
 "use client";
 import React, { useState } from "react";
-
+import { useRouter } from "next/navigation";
 const SignupPage = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
   });
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,8 +21,45 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+
+    // Clear any previous error message
+    setErrorMessage(null);
+
+    if (!formData.username || !formData.email || !formData.password) {
+      setErrorMessage("All fields are required.");
+      return;
+    }
+
+    fetch("/api/users/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to sign up.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Check if the token is present in the response
+        if (data.token) {
+          // Store the JWT token in localStorage
+          localStorage.setItem("token", data.token);
+
+          // Set a success message or redirect the user to another page
+          setSuccessMessage("Signup successful! You are now logged in.");
+          router.push("/products");
+        } else {
+          throw new Error("Failed to retrieve token.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setErrorMessage("An error occurred during signup. Please try again.");
+      });
   };
 
   return (
@@ -28,6 +68,10 @@ const SignupPage = () => {
         <h2 className="text-2xl font-bold text-center text-blue-700">
           Sign Up
         </h2>
+
+        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+        {successMessage && <p className="text-green-500">{successMessage}</p>}
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
