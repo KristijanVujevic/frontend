@@ -7,7 +7,7 @@ const MainHeader = (props) => {
     <header className="bg-blue-500 p-4 flex justify-between items-center">
       <h1 className="text-white text-2xl font-bold">DotYourSpot</h1>
       <nav>
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-4 w-full">
           <li>
             <Link href="/">Home</Link>
           </li>

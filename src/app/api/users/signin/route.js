@@ -75,7 +75,7 @@ export async function POST(request) {
       {
         success: true,
         user: {
-          id: user._id,
+          id: user._id.toString(),
           username: user.username,
           email: user.email,
           favorites: user.favorites,

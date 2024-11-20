@@ -66,9 +66,9 @@ export async function POST(request) {
 
     // Generate a JWT token for the new user
     const token = jwt.sign(
-      { email: newUser.email, id: result.insertedId },
+      { email: newUser.email, id: result.insertedId.toString() },
       JWT_SECRET,
-      { expiresIn: "1h" } // Token will expire in 1 hour
+      { expiresIn: "30d" }
     );
 
     // Return the newly created user with the token

@@ -7,10 +7,60 @@ import { useSearchParams, useRouter } from "next/navigation";
 
 function LikeButton({ productId }) {
   const [liked, setLiked] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleLike = () => {
-    setLiked(!liked);
-    // Add logic to send a request to the server to like/unlike the product
+  useEffect(() => {
+    const fetchLikedStatus = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        return;
+      }
+      try {
+        const res = await fetch(`/api/favorites`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json", // Ensure content type is set
+          },
+          body: JSON.stringify({ productId, action: "check" }), // Pass productId for checking liked status
+        });
+
+        if (!res.ok) throw new Error("Failed to fetch liked status.");
+        const { isLiked } = await res.json();
+        setLiked(isLiked);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to fetch liked status.");
+      }
+    };
+
+    fetchLikedStatus();
+  }, [productId]);
+
+  const handleLike = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setError("Please log in to like products.");
+      return;
+    }
+
+    try {
+      const action = liked ? "remove" : "add";
+      const res = await fetch(`/api/favorites`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ productId, action }),
+      });
+
+      if (!res.ok) throw new Error("Failed to like/unlike product.");
+      setLiked(!liked); // Toggle liked status
+    } catch (err) {
+      console.error(err);
+      setError("Failed to like/unlike product.");
+    }
   };
 
   return (

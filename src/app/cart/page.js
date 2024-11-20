@@ -5,7 +5,7 @@ import { removeItemFromCart, clearCart } from "../redux/slices/cartSlice";
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   const total = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0

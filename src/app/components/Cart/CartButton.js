@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import classes from "./CartButton.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateTotalQuantity } from "../../redux/slices/cartSlice";
+import CartDropdown from "./CartDropdown";
 
 const CartButton = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,10 @@ const CartButton = () => {
   };
 
   return (
-    <button className={classes.button}>
-      <span>My Cart</span>
+    <button>
+      <span>
+        <CartDropdown />
+      </span>
       <span className={classes.badge}>{totalQuantity}</span>
     </button>
   );

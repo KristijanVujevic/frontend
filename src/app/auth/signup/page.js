@@ -87,7 +87,7 @@ const SignupPage = () => {
               value={formData.username}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
             />
           </div>
           <div>
@@ -104,7 +104,7 @@ const SignupPage = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
             />
           </div>
           <div>
@@ -121,7 +121,7 @@ const SignupPage = () => {
               value={formData.password}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
             />
           </div>
           <button
