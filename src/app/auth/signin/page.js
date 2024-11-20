@@ -34,7 +34,7 @@ const SignIn = () => {
         localStorage.setItem("token", data.token);
 
         // Redirect to a protected page (e.g., /products) using the router
-        router.push("/products");
+        router.push("/");
       } else {
         // If login fails, set the error message
         setError(data.error || "Login failed");

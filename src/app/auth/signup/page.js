@@ -51,7 +51,7 @@ const SignupPage = () => {
 
           // Set a success message or redirect the user to another page
           setSuccessMessage("Signup successful! You are now logged in.");
-          router.push("/products");
+          router.push("/");
         } else {
           throw new Error("Failed to retrieve token.");
         }
