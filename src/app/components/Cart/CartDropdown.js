@@ -21,6 +21,7 @@ const CartDropdown = () => {
               className="flex justify-between items-center mb-2"
             >
               <span className="text-gray-600">{item.name}</span>
+              <span className="text-red-600">{item.quantity}x</span>
               <span className="text-gray-800 font-semibold">
                 ${item.price.toFixed(2)}
               </span>

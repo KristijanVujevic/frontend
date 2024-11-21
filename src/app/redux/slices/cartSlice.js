@@ -1,11 +1,32 @@
 // app/redux/slices/cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  items: [],
-  totalQuantity: 0,
+// Save cart to localStorage
+const saveCartToLocalStorage = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem("cartState", serializedState);
+  } catch (e) {
+    console.error("Could not save cart to localStorage", e);
+  }
 };
-//first slice which will be used in cart page (remove,add items to cart)
+
+// Load cart from localStorage
+const loadCartFromLocalStorage = () => {
+  try {
+    const serializedState = localStorage.getItem("cartState");
+    return serializedState
+      ? JSON.parse(serializedState)
+      : { items: [], totalQuantity: 0 };
+  } catch (e) {
+    console.error("Could not load cart from localStorage", e);
+    return { items: [], totalQuantity: 0 };
+  }
+};
+
+// Initial state, loaded from localStorage
+const initialState = loadCartFromLocalStorage();
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -24,6 +45,7 @@ const cartSlice = createSlice({
       } else {
         existingItem.quantity++;
       }
+      saveCartToLocalStorage(state); // Save to localStorage after each modification
     },
     removeItemFromCart: (state, action) => {
       const id = action.payload;
@@ -36,13 +58,13 @@ const cartSlice = createSlice({
           existingItem.quantity--;
         }
       }
+      saveCartToLocalStorage(state); // Save to localStorage after each modification
     },
-    //add action to clear cart
     clearCart: (state) => {
       state.items = [];
       state.totalQuantity = 0;
+      saveCartToLocalStorage(state); // Save to localStorage after clearing the cart
     },
-    //add action to calculate totalQuantity
     calculateTotalQuantity: (state) => {
       state.totalQuantity = state.items.reduce(
         (acc, item) => acc + item.quantity,
