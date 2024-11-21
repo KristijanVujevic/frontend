@@ -1,7 +1,24 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItemFromCart, clearCart } from "../redux/slices/cartSlice";
+import {
+  removeItemFromCart,
+  clearCart,
+  setCartState,
+} from "../redux/slices/cartSlice";
+
+const loadCartFromLocalStorage = () => {
+  try {
+    const serializedState = localStorage.getItem("cartState");
+    return serializedState
+      ? JSON.parse(serializedState)
+      : { items: [], totalQuantity: 0 };
+  } catch (e) {
+    console.error("Could not load cart from localStorage", e);
+    return { items: [], totalQuantity: 0 };
+  }
+};
+
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
@@ -10,6 +27,10 @@ const CartPage = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+  useEffect(() => {
+    const cartState = loadCartFromLocalStorage();
+    dispatch(setCartState(cartState)); // Update Redux store with the cart data
+  }, [dispatch]);
   //redux action to remove item from cart
   const handleRemoveFromCart = (id) => {
     dispatch(removeItemFromCart(id));
