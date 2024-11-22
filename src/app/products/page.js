@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/slices/cartSlice";
 import { useSearchParams, useRouter } from "next/navigation";
+import { setSelectedProductId } from "@/app/redux/slices/productSlice";
+import Link from "next/link";
 
 function LikeButton({ productId }) {
   const [liked, setLiked] = useState(false);
@@ -78,13 +80,17 @@ function LikeButton({ productId }) {
 export default function ProductsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const dispatch = useDispatch();
 
+  const handleProductClick = (id) => {
+    dispatch(setSelectedProductId(id)); // Dispatch the action with the product ID
+    router.push(`/products/${id}`); // This will lead to /products/[id] route, which will call the API
+  };
   // Extract the page number from the URL
   let page = parseInt(searchParams.get("page"), 10) || 1;
   page = !page || page < 1 ? 1 : page;
 
   const perPage = 9; // Number of products per page
-  const dispatch = useDispatch();
 
   const handleAddToCart = (item) => {
     dispatch(addItemToCart({ ...item, id: item._id }));
@@ -134,14 +140,22 @@ export default function ProductsPage() {
         {products.map((product) => (
           <div key={product._id} className="border p-4 rounded-lg shadow-lg">
             {product.image ? (
-              <Image
-                src={product.image}
-                alt={`Image of ${product.name}`}
-                width={600}
-                height={400}
-                className="w-full h-48 object-cover rounded-t-lg"
-              />
+              <div
+                key={product._id}
+                onClick={() => handleProductClick(product._id)}
+              >
+                <Link href={`/products/${product._id}`}>
+                  <Image
+                    src={product.image}
+                    alt={`Image of ${product.name}`}
+                    width={600}
+                    height={400}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                  />
+                </Link>
+              </div>
             ) : null}
+
             <h2 className="text-xl font-semibold mt-2">{product.name}</h2>
             <h3 className="text-xl font-semibold mt-2">{product.brand}</h3>
             <p className="text-lg font-bold">${product.price}</p>
