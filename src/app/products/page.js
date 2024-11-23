@@ -1,14 +1,29 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { addItemToCart } from "../redux/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addItemToCart,
+  selectTotalQuantity,
+  setCartState,
+} from "../redux/slices/cartSlice";
 import { useSearchParams, useRouter } from "next/navigation";
 import { setSelectedProductId } from "@/app/redux/slices/productSlice";
 import Sort from "../components/sort/Sort";
 import Filter from "@/app/components/filters/Filter";
 import Link from "next/link";
 
+// Function to save cart to localStorage
+const saveCartToLocalStorage = (items, totalQuantity) => {
+  try {
+    const cartState = { items, totalQuantity };
+    localStorage.setItem("cartState", JSON.stringify(cartState));
+  } catch (error) {
+    console.error("Could not save cart to localStorage", error);
+  }
+};
+
+// LikeButton component logic
 function LikeButton({ productId }) {
   const [liked, setLiked] = useState(false);
   const [error, setError] = useState(null);
@@ -79,12 +94,13 @@ function LikeButton({ productId }) {
   );
 }
 
+// Main ProductsPage component
 export default function ProductsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const [selectedCategory, setSelectedCategory] = useState(""); // New state for selected category
+  const [selectedCategory, setSelectedCategory] = useState(""); // State for selected category
   const [sortBy, setSortBy] = useState("name"); // Default sort by 'name'
   const [sortOrder, setSortOrder] = useState("asc"); // Default sort order 'asc'
   const [products, setProducts] = useState([]);
@@ -98,28 +114,22 @@ export default function ProductsPage() {
     "Computer Accessories",
     "Mobile Phones",
     "Wearables",
-    "Smart Home",
-    "Gaming",
     "Cameras",
-    "Drones",
     "Home Appliances",
     "Kitchen Appliances",
-    "Health & Fitness",
     "Personal Care",
-    "Home & Living",
-    "Toys & Games",
-    "Books",
-    "Stationery",
-    "Fashion",
-    "Beauty",
-    "Food & Beverages",
-    "Automotive",
-    "Pet Supplies",
-    "Travel",
-    "Services",
-    "Others",
+    "Underwear",
+    "Accessories",
+    "T-Shirts",
+    "Pants",
+    "Dresses",
+    "Footwear",
   ];
 
+  const totalQuantity = useSelector(selectTotalQuantity);
+  const cartItems = useSelector((state) => state.cart.items);
+
+  // Handle product click to view product details
   const handleProductClick = (id) => {
     dispatch(setSelectedProductId(id)); // Dispatch the action with the product ID
     router.push(`/products/${id}`); // This will lead to /products/[id] route, which will call the API
@@ -130,6 +140,7 @@ export default function ProductsPage() {
 
   const perPage = 9; // Number of products per page
 
+  // Handle filter changes (category)
   const handleFilterChange = (category) => {
     setSelectedCategory(category); // Update selected category
     router.push(
@@ -137,6 +148,7 @@ export default function ProductsPage() {
     );
   };
 
+  // Handle sorting changes (sort by and order)
   const handleSortChange = (newSortBy, newSortOrder) => {
     setSortBy(newSortBy);
     setSortOrder(newSortOrder);
@@ -145,10 +157,26 @@ export default function ProductsPage() {
     );
   };
 
+  // Handle add to cart action
   const handleAddToCart = (item) => {
     dispatch(addItemToCart({ ...item, id: item._id }));
   };
 
+  // Load cart from localStorage on component mount
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cartState");
+    if (storedCart) {
+      const { items, totalQuantity } = JSON.parse(storedCart);
+      dispatch(setCartState({ items, totalQuantity }));
+    }
+  }, [dispatch]);
+
+  // Save cart state to localStorage whenever cart items or quantity change
+  useEffect(() => {
+    saveCartToLocalStorage(cartItems, totalQuantity); // Automatically saves when cart changes
+  }, [cartItems, totalQuantity]);
+
+  // Fetch products from the API
   useEffect(() => {
     async function fetchProducts() {
       try {
@@ -176,6 +204,7 @@ export default function ProductsPage() {
     fetchProducts();
   }, [page, selectedCategory, sortBy, sortOrder]); // Fetch products when any of these state variables change
 
+  // Pagination control logic
   const goToPage = (pageNumber) => {
     router.push(
       `products/?page=${pageNumber}&category=${selectedCategory}&sortBy=${sortBy}&sortOrder=${sortOrder}`

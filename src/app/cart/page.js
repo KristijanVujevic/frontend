@@ -5,6 +5,7 @@ import {
   removeItemFromCart,
   clearCart,
   setCartState,
+  selectTotalQuantity,
 } from "../redux/slices/cartSlice";
 
 const loadCartFromLocalStorage = () => {
@@ -27,6 +28,7 @@ const CartPage = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+
   useEffect(() => {
     const cartState = loadCartFromLocalStorage();
     dispatch(setCartState(cartState)); // Update Redux store with the cart data

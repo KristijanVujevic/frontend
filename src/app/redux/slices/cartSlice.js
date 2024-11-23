@@ -62,5 +62,6 @@ export const {
   clearCart,
   setCartState,
 } = cartSlice.actions;
+export const selectTotalQuantity = (state) => state.cart.totalQuantity;
 
 export default cartSlice.reducer;
