@@ -34,18 +34,28 @@ export async function GET(req) {
     [sortBy]: sortOrder === "asc" ? 1 : -1,
   };
 
+  // Handle category filter
+  const category = url.searchParams.get("category") || ""; // Default to empty string if no category is provided
+
+  // Building the query filter
+  let filter = {};
+  if (category) {
+    filter.category = category; // Filter by category if provided
+  }
+
   try {
     const client = await connectToDatabase();
     const db = client.db(MONGO_DB);
     const productsCollection = db.collection("products");
 
     const products = await productsCollection
-      .find({})
+      .find(filter) // Use the filter for category (if provided)
       .skip(skip)
       .limit(limit)
       .sort(sort)
       .toArray();
-    const totalCount = await productsCollection.countDocuments();
+
+    const totalCount = await productsCollection.countDocuments(filter); // Apply filter for total count as well
 
     return NextResponse.json({ products, totalCount });
   } catch (error) {

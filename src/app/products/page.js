@@ -93,7 +93,7 @@ export default function ProductsPage() {
   const [totalPages, setTotalPages] = useState(1); // Track the total number of pages
 
   const categories = [
-    "Monitor",
+    "Monitors",
     "Audio",
     "Computer Accessories",
     "Mobile Phones",
