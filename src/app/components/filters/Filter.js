@@ -17,7 +17,7 @@ const Filter = ({ categories, onFilterChange }) => {
   };
 
   return (
-    <div className="filter-component p-4 bg-white shadow-md rounded-md w-1/5">
+    <div className="filter-component p-4 bg-white shadow-md rounded-md w-1/5 m-3">
       <label
         htmlFor="category-filter"
         className="block text-sm font-medium text-gray-700 mb-2"
@@ -28,7 +28,7 @@ const Filter = ({ categories, onFilterChange }) => {
         id="category-filter"
         value={selectedCategory}
         onChange={handleCategoryChange}
-        className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-700"
+        className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-700 "
       >
         <option value="">All</option>
         {categories.map((category) => (
