@@ -8,8 +8,10 @@ const MONGO_DB = process.env.MONGO_DB || "shop";
 let cachedClient = null;
 
 async function connectToDatabase() {
+  // Use cached connection if available
   if (cachedClient) return cachedClient;
 
+  // Create a new MongoDB client and connect
   const client = new MongoClient(MONGO_URI);
   try {
     await client.connect();
@@ -17,37 +19,22 @@ async function connectToDatabase() {
     console.error("Failed to connect to MongoDB:", error);
     throw new Error("Failed to connect to MongoDB");
   }
-  cachedClient = client;
+  cachedClient = client; // Cache the client for future requests
   return client;
 }
 
 export async function GET(req) {
   const url = new URL(req.url);
-  const page = parseInt(url.searchParams.get("page"), 10) || 1;
-  const limit = parseInt(url.searchParams.get("limit"), 10) || 9;
-  const skip = (page - 1) * limit;
-
-  const sortBy = url.searchParams.get("sortBy") || "name"; // Default is "name"
-  const sortOrder = url.searchParams.get("sortOrder") || "asc"; // Default is "asc"
-
-  const sort = {
-    [sortBy]: sortOrder === "asc" ? 1 : -1,
-  };
 
   try {
     const client = await connectToDatabase();
-    const db = client.db(MONGO_DB);
-    const productsCollection = db.collection("products");
+    const db = client.db(process.env.MONGO_DB);
+    const usersCollection = db.collection("users");
 
-    const products = await productsCollection
-      .find({})
-      .skip(skip)
-      .limit(limit)
-      .sort(sort)
-      .toArray();
-    const totalCount = await productsCollection.countDocuments();
+    const allUsers = await usersCollection.find({}).toArray();
+    const totalCount = await usersCollection.countDocuments();
 
-    return NextResponse.json({ products, totalCount });
+    return NextResponse.json({ allUsers, totalCount });
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to fetch products" },

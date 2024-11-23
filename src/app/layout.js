@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>{children}</Providers>
-        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-          <p className="text-sm text-center text-gray-500">
+        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center sticky bottom-0">
+          <p className="text-sm text-center text-gray-500 ">
             &copy; {new Date().getFullYear()} DotYourSpot. All rights reserved.
           </p>
         </footer>

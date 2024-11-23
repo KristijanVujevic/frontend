@@ -24,7 +24,6 @@ async function connectToDatabase() {
   return client;
 }
 
-// SIGN IN ENDPOINT
 export async function POST(request) {
   try {
     const client = await connectToDatabase();
@@ -63,14 +62,19 @@ export async function POST(request) {
       );
     }
 
-    // Generate a JWT token (expires in 30 days)
+    // Generate a JWT token (expires in 30 days) and include the user's role
     const token = jwt.sign(
-      { id: user._id, email: user.email, username: user.username },
+      {
+        id: user._id,
+        email: user.email,
+        username: user.username,
+        role: user.role,
+      }, // include role in the token
       JWT_SECRET,
       { expiresIn: "30d" }
     );
 
-    // Return the user data and token
+    // Return the user data, role, and token
     return NextResponse.json(
       {
         success: true,
@@ -78,6 +82,7 @@ export async function POST(request) {
           id: user._id.toString(),
           username: user.username,
           email: user.email,
+          role: user.role, // send the user's role in the response
           favorites: user.favorites,
         },
         token,

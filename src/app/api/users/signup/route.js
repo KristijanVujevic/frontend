@@ -59,21 +59,31 @@ export async function POST(request) {
       password: hashedPassword, // Store the hashed password
       createdAt: new Date(),
       favorites: [],
+      role: "user", // Default role to "user", you can modify this logic as needed
     };
 
     // Insert the new user into the "users" collection
     const result = await db.collection("users").insertOne(newUser);
 
-    // Generate a JWT token for the new user
+    // Generate a JWT token for the new user, including the role
     const token = jwt.sign(
-      { email: newUser.email, id: result.insertedId.toString() },
+      {
+        id: result.insertedId.toString(),
+        email: newUser.email,
+        username: newUser.username,
+        role: newUser.role, // Include role in the token
+      },
       JWT_SECRET,
       { expiresIn: "30d" }
     );
 
     // Return the newly created user with the token
     return NextResponse.json(
-      { success: true, user: newUser, token },
+      {
+        success: true,
+        user: { ...newUser, id: result.insertedId.toString() },
+        token,
+      },
       { status: 201 }
     );
   } catch (error) {

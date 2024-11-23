@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/slices/cartSlice";
 import { useSearchParams, useRouter } from "next/navigation";
 import { setSelectedProductId } from "@/app/redux/slices/productSlice";
+import Sort from "../components/sort/Sort";
+import Filter from "@/app/components/filters/Filter";
 import Link from "next/link";
 
 function LikeButton({ productId }) {
@@ -82,35 +84,84 @@ export default function ProductsPage() {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const handleProductClick = (id) => {
-    dispatch(setSelectedProductId(id)); // Dispatch the action with the product ID
-    router.push(`/products/${id}`); // This will lead to /products/[id] route, which will call the API
-  };
-  // Extract the page number from the URL
-  let page = parseInt(searchParams.get("page"), 10) || 1;
-  page = !page || page < 1 ? 1 : page;
-
-  const perPage = 9; // Number of products per page
-
-  const handleAddToCart = (item) => {
-    dispatch(addItemToCart({ ...item, id: item._id }));
-  };
-
+  const [selectedCategory, setSelectedCategory] = useState(""); // New state for selected category
+  const [sortBy, setSortBy] = useState("name"); // Default sort by 'name'
+  const [sortOrder, setSortOrder] = useState("asc"); // Default sort order 'asc'
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [totalPages, setTotalPages] = useState(1); // Track the total number of pages
 
+  const categories = [
+    "Monitor",
+    "Audio",
+    "Computer Accessories",
+    "Mobile Phones",
+    "Wearables",
+    "Smart Home",
+    "Gaming",
+    "Cameras",
+    "Drones",
+    "Home Appliances",
+    "Kitchen Appliances",
+    "Health & Fitness",
+    "Personal Care",
+    "Home & Living",
+    "Toys & Games",
+    "Books",
+    "Stationery",
+    "Fashion",
+    "Beauty",
+    "Food & Beverages",
+    "Automotive",
+    "Pet Supplies",
+    "Travel",
+    "Services",
+    "Others",
+  ];
+
+  const handleProductClick = (id) => {
+    dispatch(setSelectedProductId(id)); // Dispatch the action with the product ID
+    router.push(`/products/${id}`); // This will lead to /products/[id] route, which will call the API
+  };
+
+  let page = parseInt(searchParams.get("page"), 10) || 1;
+  page = !page || page < 1 ? 1 : page;
+
+  const perPage = 9; // Number of products per page
+
+  const handleFilterChange = (category) => {
+    setSelectedCategory(category); // Update selected category
+    router.push(
+      `/products?page=1&category=${category}&sortBy=${sortBy}&sortOrder=${sortOrder}`
+    );
+  };
+
+  const handleSortChange = (newSortBy, newSortOrder) => {
+    setSortBy(newSortBy);
+    setSortOrder(newSortOrder);
+    router.push(
+      `/products?page=1&category=${selectedCategory}&sortBy=${newSortBy}&sortOrder=${newSortOrder}`
+    );
+  };
+
+  const handleAddToCart = (item) => {
+    dispatch(addItemToCart({ ...item, id: item._id }));
+  };
+
   useEffect(() => {
     async function fetchProducts() {
       try {
-        // Fetch products based on the current page
-        const res = await fetch(`/api/products?page=${page}&limit=${perPage}`);
-
+        const categoryQuery = selectedCategory
+          ? `&category=${selectedCategory}`
+          : "";
+        const sortQuery = `&sortBy=${sortBy}&sortOrder=${sortOrder}`;
+        const res = await fetch(
+          `/api/products?page=${page}&limit=${perPage}${categoryQuery}${sortQuery}`
+        );
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
-
         const { products, totalCount } = await res.json();
         setProducts(products);
         setTotalPages(Math.ceil(totalCount / perPage)); // Calculate total pages based on product count
@@ -123,11 +174,12 @@ export default function ProductsPage() {
     }
 
     fetchProducts();
-  }, [page]);
+  }, [page, selectedCategory, sortBy, sortOrder]); // Fetch products when any of these state variables change
 
-  // Handle pagination navigation
   const goToPage = (pageNumber) => {
-    router.push(`products/?page=${pageNumber}`);
+    router.push(
+      `products/?page=${pageNumber}&category=${selectedCategory}&sortBy=${sortBy}&sortOrder=${sortOrder}`
+    );
   };
 
   if (loading) return <p className="text-center text-lg">Loading...</p>;
@@ -136,14 +188,13 @@ export default function ProductsPage() {
   return (
     <main className="container mx-auto p-4">
       <h1 className="text-4xl font-bold text-center mb-6">Products</h1>
+      <Filter categories={categories} onFilterChange={handleFilterChange} />
+      <Sort onSortChange={handleSortChange} />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
           <div key={product._id} className="border p-4 rounded-lg shadow-lg">
             {product.image ? (
-              <div
-                key={product._id}
-                onClick={() => handleProductClick(product._id)}
-              >
+              <div onClick={() => handleProductClick(product._id)}>
                 <Link href={`/products/${product._id}`}>
                   <Image
                     src={product.image}

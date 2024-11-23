@@ -33,7 +33,6 @@ const SignIn = () => {
         // If the login is successful, store the JWT token (and user info, if necessary)
         localStorage.setItem("token", data.token);
 
-        // Redirect to a protected page (e.g., /products) using the router
         router.push("/");
       } else {
         // If login fails, set the error message
