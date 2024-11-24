@@ -1,0 +1,86 @@
+[{
+  "_id": {
+    "$oid": "673cd8e6879f1a7f4663fb9e"
+  },
+  "username": "kiki",
+  "email": "kiki@gmail.com",
+  "password": "$2b$10$hjxJQKH/4r0HlHv79M1zAO/dsmVrIV285lpTPhbnlphkKAOC5uzUO",
+  "createdAt": {
+    "$date": "2024-11-19T18:28:54.618Z"
+  },
+  "favorites": [
+    "673a4f48693501de68f74e59",
+    "673a4f48693501de68f74e5c",
+    "673a4f48693501de68f74e5d",
+    "673a50e4693501de68f74ec3",
+    "673a50e4693501de68f74ec2",
+    "673a50e4693501de68f74ebe",
+    "673a50e4693501de68f74ea4",
+    "673a4f48693501de68f74e5a",
+    "673a50e4693501de68f74eb7"
+  ],
+  "role": ""
+},
+{
+  "_id": {
+    "$oid": "673df2d2879f1a7f4663fb9f"
+  },
+  "username": "testing",
+  "email": "testing@123.com",
+  "password": "$2b$10$UmUhLJ4zdnsrYdl/Bq6l9.cCOEAMik80NV0R5U7TNUcX6GbL0WHV2",
+  "createdAt": {
+    "$date": "2024-11-20T14:31:46.431Z"
+  },
+  "favorites": [],
+  "role": ""
+},
+{
+  "_id": {
+    "$oid": "673f0932879f1a7f4663fba0"
+  },
+  "username": "kristijan",
+  "email": "aa@gmail.com",
+  "password": "$2b$10$eD9XbVaWvQaqwJ7wQl7m8OjWLPFPk/pRFhTgBrSo95mo0NnjuOlhq",
+  "createdAt": {
+    "$date": "2024-11-21T10:19:30.152Z"
+  },
+  "favorites": [
+    "673a4f48693501de68f74e59",
+    "673a4f48693501de68f74e5a"
+  ],
+  "role": ""
+},
+{
+  "_id": {
+    "$oid": "673fa713879f1a7f4663fba1"
+  },
+  "username": "meri",
+  "email": "meri@123.com",
+  "password": "$2b$10$rsiRzgFN1SAaNFaoPnvnfekBPpy2hayJmEP0vEO5w1UPDDsEZGvhG",
+  "createdAt": {
+    "$date": "2024-11-21T21:33:07.052Z"
+  },
+  "favorites": [
+    "673a50e4693501de68f74ebf",
+    "673a50e4693501de68f74ec1",
+    "673a50e4693501de68f74ec2",
+    "673a4f48693501de68f74e7d",
+    "673a4f48693501de68f74e5a",
+    "673a4f48693501de68f74e5d",
+    "673a4f48693501de68f74e90"
+  ],
+  "role": ""
+},
+{
+  "_id": {
+    "$oid": "6741f7e3879f1a7f4663fba2"
+  },
+  "username": "admin",
+  "email": "admin@admin.com",
+  "password": "$2b$10$mkyYl16xvSiKd8M..iGd2uOaGeGALMbxowB6Qtrp0eU6ykgeICFky",
+  "createdAt": {
+    "$date": "2024-11-23T15:42:27.813Z"
+  },
+  "favorites": [],
+  "role": "admin"
+}]

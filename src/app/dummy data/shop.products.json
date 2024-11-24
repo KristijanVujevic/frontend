@@ -1,0 +1,1411 @@
+[{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e59"
+  },
+  "name": "Wireless Mouse",
+  "price": 19.99,
+  "brand": "Logitech",
+  "quantity": 10,
+  "description": "Ergonomic wireless mouse with adjustable DPI.",
+  "rating": 4.5,
+  "stock": 100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Computer Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e5a"
+  },
+  "name": "Bluetooth Headphones",
+  "price": 29.99,
+  "brand": "Sony",
+  "quantity": 20,
+  "description": "Noise-cancelling over-ear headphones with long battery life.",
+  "rating": 4,
+  "stock": 200,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Audio"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e5b"
+  },
+  "name": "Smartphone",
+  "price": 399.99,
+  "brand": "Samsung",
+  "quantity": 30,
+  "description": "Latest model with high-resolution camera and fast processor.",
+  "rating": 4.5,
+  "stock": 300,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Mobile Phones"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e5c"
+  },
+  "name": "Laptop",
+  "price": 799.99,
+  "brand": "Dell",
+  "quantity": 40,
+  "description": "Powerful laptop with 16GB RAM and 512GB SSD.",
+  "rating": 4.8,
+  "stock": 400,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Computers"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e5d"
+  },
+  "name": "4K Monitor",
+  "price": 299.99,
+  "brand": "MG",
+  "quantity": 50,
+  "description": "Ultra HD monitor with vibrant colors and wide viewing angles.",
+  "rating": 4.2,
+  "stock": 500,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Monitors"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e5e"
+  },
+  "name": "Gaming Keyboard",
+  "price": 69.99,
+  "brand": "Lazer",
+  "quantity": 60,
+  "description": "Mechanical keyboard with customizable RGB lighting.",
+  "rating": 4.7,
+  "stock": 600,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Computer Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e5f"
+  },
+  "name": "Smartwatch",
+  "price": 199.99,
+  "brand": "Pear",
+  "quantity": 70,
+  "description": "Smartwatch with fitness tracking and heart rate monitor.",
+  "rating": 4.1,
+  "stock": 700,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Wearables"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e60"
+  },
+  "name": "Tablet",
+  "price": 249.99,
+  "brand": "Amazonian",
+  "quantity": 80,
+  "description": "High-resolution tablet with long battery life and fast performance.",
+  "rating": 4.6,
+  "stock": 800,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Tablets"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e61"
+  },
+  "name": "Wireless Charger",
+  "price": 39.99,
+  "brand": "Anker",
+  "quantity": 90,
+  "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+  "rating": 4.3,
+  "stock": 900,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Chargers"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e62"
+  },
+  "name": "Portable Speaker",
+  "price": 49.99,
+  "brand": "JBL",
+  "quantity": 100,
+  "description": "Waterproof portable speaker with powerful sound.",
+  "rating": 4.9,
+  "stock": 1000,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Audio"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e63"
+  },
+  "name": "Fitness Tracker",
+  "price": 99.99,
+  "brand": "Fitbit",
+  "quantity": 110,
+  "description": "Wearable fitness tracker with heart rate monitor and GPS.",
+  "rating": 4.4,
+  "stock": 1100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Wearables"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e64"
+  },
+  "name": "Digital Camera",
+  "price": 499.99,
+  "brand": "Canon",
+  "quantity": 120,
+  "description": "High-resolution digital camera with optical zoom.",
+  "rating": 4.6,
+  "stock": 1200,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Cameras"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e65"
+  },
+  "name": "Electric Toothbrush",
+  "price": 59.99,
+  "brand": "Oral-B",
+  "quantity": 130,
+  "description": "Rechargeable electric toothbrush with multiple brushing modes.",
+  "rating": 4.2,
+  "stock": 1300,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Personal Care"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e66"
+  },
+  "name": "4K Monitor",
+  "price": 299.99,
+  "brand": "LG",
+  "quantity": 50,
+  "description": "Ultra HD monitor with vibrant colors and wide viewing angles.",
+  "rating": 4.2,
+  "stock": 500,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Monitors"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e67"
+  },
+  "name": "Gaming Keyboard",
+  "price": 69.99,
+  "brand": "Razer",
+  "quantity": 60,
+  "description": "Mechanical keyboard with customizable RGB lighting.",
+  "rating": 4.7,
+  "stock": 600,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Computer Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e68"
+  },
+  "name": "Smartwatch",
+  "price": 199.99,
+  "brand": "Apple",
+  "quantity": 70,
+  "description": "Smartwatch with fitness tracking and heart rate monitor.",
+  "rating": 4.1,
+  "stock": 700,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Wearables"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e69"
+  },
+  "name": "Tablet",
+  "price": 249.99,
+  "brand": "Famazon",
+  "quantity": 80,
+  "description": "High-resolution tablet with long battery life and fast performance.",
+  "rating": 4.6,
+  "stock": 800,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Tablets"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e6a"
+  },
+  "name": "Wireless Charger",
+  "price": 39.99,
+  "brand": "Anker",
+  "quantity": 90,
+  "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+  "rating": 4.3,
+  "stock": 900,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Chargers"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e6b"
+  },
+  "name": "Portable Speaker",
+  "price": 49.99,
+  "brand": "JBL",
+  "quantity": 100,
+  "description": "Waterproof portable speaker with powerful sound.",
+  "rating": 4.9,
+  "stock": 1000,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Audio"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e6c"
+  },
+  "name": "Fitness Tracker",
+  "price": 99.99,
+  "brand": "Fitbit",
+  "quantity": 110,
+  "description": "Wearable fitness tracker with heart rate monitor and GPS.",
+  "rating": 4.4,
+  "stock": 1100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Wearables"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e6d"
+  },
+  "name": "Digital Camera",
+  "price": 499.99,
+  "brand": "Canon",
+  "quantity": 120,
+  "description": "High-resolution digital camera with optical zoom.",
+  "rating": 4.6,
+  "stock": 1200,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Cameras"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e6e"
+  },
+  "name": "Electric Toothbrush",
+  "price": 59.99,
+  "brand": "Oral-B",
+  "quantity": 130,
+  "description": "Rechargeable electric toothbrush with multiple brushing modes.",
+  "rating": 4.2,
+  "stock": 1300,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Personal Care"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e6f"
+  },
+  "name": "Air Purifier",
+  "price": 149.99,
+  "brand": "Dyson",
+  "quantity": 140,
+  "description": "High-efficiency air purifier with HEPA filter.",
+  "rating": 4.7,
+  "stock": 1400,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e70"
+  },
+  "name": "Coffee Maker",
+  "price": 89.99,
+  "brand": "Keurig",
+  "quantity": 150,
+  "description": "Single-serve coffee maker with programmable features.",
+  "rating": 4.3,
+  "stock": 1500,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Kitchen Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e71"
+  },
+  "name": "Electric Kettle",
+  "price": 39.99,
+  "brand": "Hamilton Beach",
+  "quantity": 160,
+  "description": "Fast-boiling electric kettle with auto shut-off.",
+  "rating": 4.5,
+  "stock": 1600,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Kitchen Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e72"
+  },
+  "name": "Blender",
+  "price": 49.99,
+  "brand": "Ninja",
+  "quantity": 170,
+  "description": "High-power blender with multiple speed settings.",
+  "rating": 4.6,
+  "stock": 1700,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Kitchen Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e73"
+  },
+  "name": "Vacuum Cleaner",
+  "price": 199.99,
+  "brand": "Shark",
+  "quantity": 180,
+  "description": "Powerful vacuum cleaner with advanced suction technology.",
+  "rating": 4.8,
+  "stock": 1800,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e74"
+  },
+  "name": "Hair Dryer",
+  "price": 29.99,
+  "brand": "Conair",
+  "quantity": 190,
+  "description": "Compact hair dryer with multiple heat settings.",
+  "rating": 4.1,
+  "stock": 1900,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Personal Care"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e75"
+  },
+  "name": "Electric Shaver",
+  "price": 79.99,
+  "brand": "Philips",
+  "quantity": 200,
+  "description": "Rechargeable electric shaver with precision blades.",
+  "rating": 4.4,
+  "stock": 2000,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Personal Care"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e76"
+  },
+  "name": "Smart Thermostat",
+  "price": 249.99,
+  "brand": "Nest",
+  "quantity": 210,
+  "description": "Smart thermostat with remote control and energy-saving features.",
+  "rating": 4.7,
+  "stock": 2100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e77"
+  },
+  "name": "Security Camera",
+  "price": 129.99,
+  "brand": "Arlo",
+  "quantity": 220,
+  "description": "Wireless security camera with night vision and motion detection.",
+  "rating": 4.5,
+  "stock": 2200,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Security"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e78"
+  },
+  "name": "Smart Light Bulb",
+  "price": 19.99,
+  "brand": "Philips Hue",
+  "quantity": 230,
+  "description": "Smart LED light bulb with customizable colors and remote control.",
+  "rating": 4.3,
+  "stock": 2300,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e79"
+  },
+  "name": "Streaming Device",
+  "price": 49.99,
+  "brand": "Roku",
+  "quantity": 240,
+  "description": "Streaming device with access to multiple streaming services.",
+  "rating": 4.6,
+  "stock": 2400,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Entertainment"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e7a"
+  },
+  "name": "Soundbar",
+  "price": 199.99,
+  "brand": "Bose",
+  "quantity": 250,
+  "description": "High-quality soundbar with deep bass and clear audio.",
+  "rating": 4.8,
+  "stock": 2500,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Entertainment"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e7b"
+  },
+  "name": "Smart Doorbell",
+  "price": 149.99,
+  "brand": "Ring",
+  "quantity": 260,
+  "description": "Smart doorbell with video recording and two-way audio.",
+  "rating": 4.5,
+  "stock": 2600,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Security"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e7c"
+  },
+  "name": "Robot Vacuum",
+  "price": 299.99,
+  "brand": "iRobot",
+  "quantity": 270,
+  "description": "Automatic robot vacuum with smart navigation.",
+  "rating": 4.7,
+  "stock": 2700,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e7d"
+  },
+  "name": "Electric Scooter",
+  "price": 499.99,
+  "brand": "Xiaomi",
+  "quantity": 280,
+  "description": "Foldable electric scooter with long battery life.",
+  "rating": 4.6,
+  "stock": 2800,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Transportation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e7e"
+  },
+  "name": "Smart Lock",
+  "price": 199.99,
+  "brand": "August",
+  "quantity": 290,
+  "description": "Smart lock with keyless entry and remote control.",
+  "rating": 4.4,
+  "stock": 2900,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Security"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e7f"
+  },
+  "name": "Electric Grill",
+  "price": 99.99,
+  "brand": "George Foreman",
+  "quantity": 300,
+  "description": "Indoor electric grill with non-stick surface.",
+  "rating": 4.3,
+  "stock": 3000,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Kitchen Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e80"
+  },
+  "name": "Smart Plug",
+  "price": 24.99,
+  "brand": "TP-Link",
+  "quantity": 310,
+  "description": "Smart plug with remote control and energy monitoring.",
+  "rating": 4.5,
+  "stock": 3100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e81"
+  },
+  "name": "Smart Scale",
+  "price": 49.99,
+  "brand": "Withings",
+  "quantity": 320,
+  "description": "Smart scale with body composition analysis and app integration.",
+  "rating": 4.4,
+  "stock": 3200,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Health"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e82"
+  },
+  "name": "Electric Blanket",
+  "price": 59.99,
+  "brand": "Sunbeam",
+  "quantity": 330,
+  "description": "Electric blanket with adjustable heat settings.",
+  "rating": 4.2,
+  "stock": 3300,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Comfort"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e83"
+  },
+  "name": "Smart Garage Door Opener",
+  "price": 199.99,
+  "brand": "Chamberlain",
+  "quantity": 340,
+  "description": "Smart garage door opener with remote control and monitoring.",
+  "rating": 4.6,
+  "stock": 3400,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e84"
+  },
+  "name": "Electric Pressure Cooker",
+  "price": 99.99,
+  "brand": "Instant Pot",
+  "quantity": 350,
+  "description": "Multi-functional electric pressure cooker with multiple cooking modes.",
+  "rating": 4.7,
+  "stock": 3500,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Kitchen Appliances"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e85"
+  },
+  "name": "Smart Water Bottle",
+  "price": 49.99,
+  "brand": "HidrateSpark",
+  "quantity": 360,
+  "description": "Smart water bottle with hydration tracking and reminders.",
+  "rating": 4.3,
+  "stock": 3600,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Health"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e86"
+  },
+  "name": "Electric Bike",
+  "price": 999.99,
+  "brand": "Rad Power Bikes",
+  "quantity": 370,
+  "description": "Electric bike with pedal assist and long battery life.",
+  "rating": 4.8,
+  "stock": 3700,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Transportation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e87"
+  },
+  "name": "Smart Ceiling Fan",
+  "price": 249.99,
+  "brand": "Hunter",
+  "quantity": 380,
+  "description": "Smart ceiling fan with remote control and voice assistant compatibility.",
+  "rating": 4.5,
+  "stock": 3800,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Comfort"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e88"
+  },
+  "name": "Smart Sprinkler Controller",
+  "price": 199.99,
+  "brand": "Rachio",
+  "quantity": 390,
+  "description": "Smart sprinkler controller with weather-based scheduling.",
+  "rating": 4.6,
+  "stock": 3900,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e89"
+  },
+  "name": "Electric Toothbrush",
+  "price": 59.99,
+  "brand": "Philips Sonicare",
+  "quantity": 400,
+  "description": "Rechargeable electric toothbrush with multiple brushing modes.",
+  "rating": 4.4,
+  "stock": 4000,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Personal Care"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e8a"
+  },
+  "name": "Smart Smoke Detector",
+  "price": 99.99,
+  "brand": "Nest",
+  "quantity": 410,
+  "description": "Smart smoke detector with remote alerts and self-testing.",
+  "rating": 4.7,
+  "stock": 4100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Security"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e8b"
+  },
+  "name": "Smart Light Switch",
+  "price": 39.99,
+  "brand": "Lutron",
+  "quantity": 420,
+  "description": "Smart light switch with remote control and scheduling.",
+  "rating": 4.5,
+  "stock": 4200,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e8c"
+  },
+  "name": "Smart Thermostat",
+  "price": 249.99,
+  "brand": "Ecobee",
+  "quantity": 430,
+  "description": "Smart thermostat with remote sensors and energy-saving features.",
+  "rating": 4.6,
+  "stock": 4300,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e8d"
+  },
+  "name": "Smart Door Lock",
+  "price": 199.99,
+  "brand": "Schlage",
+  "quantity": 440,
+  "description": "Smart door lock with keyless entry and remote control.",
+  "rating": 4.5,
+  "stock": 4400,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Security"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e8e"
+  },
+  "name": "Smart Garage Door Opener",
+  "price": 199.99,
+  "brand": "MyQ",
+  "quantity": 450,
+  "description": "Smart garage door opener with remote control and monitoring.",
+  "rating": 4.6,
+  "stock": 4500,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e8f"
+  },
+  "name": "Smart Light Bulb",
+  "price": 19.99,
+  "brand": "LIFX",
+  "quantity": 460,
+  "description": "Smart LED light bulb with customizable colors and remote control.",
+  "rating": 4.4,
+  "stock": 4600,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e90"
+  },
+  "name": "Smart Plug",
+  "price": 24.99,
+  "brand": "Amazon",
+  "quantity": 470,
+  "description": "Smart plug with remote control and energy monitoring.",
+  "rating": 4.5,
+  "stock": 4700,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e91"
+  },
+  "name": "Smart Light Switch",
+  "price": 39.99,
+  "brand": "Belkin",
+  "quantity": 480,
+  "description": "Smart light switch with remote control and scheduling.",
+  "rating": 4.5,
+  "stock": 4800,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e92"
+  },
+  "name": "Smart Thermostat",
+  "price": 249.99,
+  "brand": "Honeywell",
+  "quantity": 490,
+  "description": "Smart thermostat with remote sensors and energy-saving features.",
+  "rating": 4.6,
+  "stock": 4900,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Automation"
+},
+{
+  "_id": {
+    "$oid": "673a4f48693501de68f74e93"
+  },
+  "name": "Smart Door Lock",
+  "price": 199.99,
+  "brand": "Kwikset",
+  "quantity": 500,
+  "description": "Smart door lock with keyless entry and remote control.",
+  "rating": 4.5,
+  "stock": 5000,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Home Security"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e97"
+  },
+  "price": 29.99,
+  "brand": "Nike",
+  "quantity": 10,
+  "description": "Comfortable cotton t-shirt",
+  "rating": 4.5,
+  "stock": 100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "T-Shirts"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e98"
+  },
+  "price": 49.99,
+  "brand": "Levi's",
+  "quantity": 5,
+  "description": "Stylish denim jeans",
+  "rating": 4.7,
+  "stock": 50,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Jeans"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e99"
+  },
+  "price": 19.99,
+  "brand": "Adidas",
+  "quantity": 20,
+  "description": "Casual cotton socks",
+  "rating": 4.3,
+  "stock": 200,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Socks"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e9a"
+  },
+  "price": 39.99,
+  "brand": "Gucci",
+  "quantity": 15,
+  "description": "Elegant silk scarf",
+  "rating": 4.8,
+  "stock": 30,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e9b"
+  },
+  "price": 59.99,
+  "brand": "Ralph Lauren",
+  "quantity": 8,
+  "description": "Warm wool sweater",
+  "rating": 4.6,
+  "stock": 40,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Sweaters"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e9c"
+  },
+  "price": 24.99,
+  "brand": "Puma",
+  "quantity": 12,
+  "description": "Comfortable cotton shorts",
+  "rating": 4.4,
+  "stock": 60,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Shorts"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e9d"
+  },
+  "price": 89.99,
+  "brand": "Armani",
+  "quantity": 3,
+  "description": "Stylish leather jacket",
+  "rating": 4.9,
+  "stock": 20,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Jackets"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e9e"
+  },
+  "price": 34.99,
+  "brand": "Under Armour",
+  "quantity": 18,
+  "description": "Comfortable cotton hoodie",
+  "rating": 4.5,
+  "stock": 80,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Hoodies"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74e9f"
+  },
+  "price": 44.99,
+  "brand": "Zara",
+  "quantity": 7,
+  "description": "Stylish summer dress",
+  "rating": 4.7,
+  "stock": 35,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Dresses"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea0"
+  },
+  "price": 69.99,
+  "brand": "Versace",
+  "quantity": 6,
+  "description": "Elegant evening gown",
+  "rating": 4.8,
+  "stock": 25,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Gowns"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea1"
+  },
+  "price": 14.99,
+  "brand": "New Era",
+  "quantity": 25,
+  "description": "Casual cotton cap",
+  "rating": 4.2,
+  "stock": 150,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea2"
+  },
+  "price": 54.99,
+  "brand": "North Face",
+  "quantity": 9,
+  "description": "Warm winter coat",
+  "rating": 4.6,
+  "stock": 45,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Coats"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea3"
+  },
+  "price": 22.99,
+  "brand": "Lululemon",
+  "quantity": 14,
+  "description": "Comfortable cotton leggings",
+  "rating": 4.4,
+  "stock": 70,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Leggings"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea4"
+  },
+  "price": 79.99,
+  "brand": "Timberland",
+  "quantity": 4,
+  "description": "Stylish leather boots",
+  "rating": 4.8,
+  "stock": 30,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Footwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea5"
+  },
+  "price": 27.99,
+  "brand": "Calvin Klein",
+  "quantity": 11,
+  "description": "Comfortable cotton pajamas",
+  "rating": 4.5,
+  "stock": 90,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Sleepwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea6"
+  },
+  "price": 32.99,
+  "brand": "H&M",
+  "quantity": 13,
+  "description": "Stylish summer hat",
+  "rating": 4.6,
+  "stock": 55,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea7"
+  },
+  "price": 64.99,
+  "brand": "Chanel",
+  "quantity": 5,
+  "description": "Elegant silk blouse",
+  "rating": 4.7,
+  "stock": 40,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Blouses"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea8"
+  },
+  "price": 18.99,
+  "brand": "Reebok",
+  "quantity": 22,
+  "description": "Casual cotton tank top",
+  "rating": 4.3,
+  "stock": 120,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Tops"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ea9"
+  },
+  "price": 37.99,
+  "brand": "Champion",
+  "quantity": 10,
+  "description": "Comfortable cotton joggers",
+  "rating": 4.5,
+  "stock": 75,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Pants"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eaa"
+  },
+  "price": 47.99,
+  "brand": "Birkenstock",
+  "quantity": 8,
+  "description": "Stylish summer sandals",
+  "rating": 4.7,
+  "stock": 50,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Footwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eab"
+  },
+  "price": 23.99,
+  "brand": "Victoria's Secret",
+  "quantity": 16,
+  "description": "Comfortable cotton underwear",
+  "rating": 4.4,
+  "stock": 100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Underwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eac"
+  },
+  "price": 52.99,
+  "brand": "Patagonia",
+  "quantity": 7,
+  "description": "Warm fleece jacket",
+  "rating": 4.6,
+  "stock": 35,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Jackets"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ead"
+  },
+  "price": 21.99,
+  "brand": "Gap",
+  "quantity": 19,
+  "description": "Comfortable cotton tank top",
+  "rating": 4.3,
+  "stock": 110,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Tops"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eae"
+  },
+  "price": 36.99,
+  "brand": "Tommy Hilfiger",
+  "quantity": 12,
+  "description": "Stylish summer shorts",
+  "rating": 4.5,
+  "stock": 65,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Shorts"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eaf"
+  },
+  "price": 46.99,
+  "brand": "Hugo Boss",
+  "quantity": 9,
+  "description": "Elegant silk tie",
+  "rating": 4.7,
+  "stock": 45,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb0"
+  },
+  "price": 25.99,
+  "brand": "Fruit of the Loom",
+  "quantity": 14,
+  "description": "Comfortable cotton briefs",
+  "rating": 4.4,
+  "stock": 95,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Underwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb1"
+  },
+  "price": 55.99,
+  "brand": "Columbia",
+  "quantity": 6,
+  "description": "Warm wool hat",
+  "rating": 4.6,
+  "stock": 30,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb2"
+  },
+  "price": 20.99,
+  "brand": "Old Navy",
+  "quantity": 21,
+  "description": "Casual cotton t-shirt",
+  "rating": 4.3,
+  "stock": 130,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "T-Shirts"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb3"
+  },
+  "price": 38.99,
+  "brand": "Fila",
+  "quantity": 11,
+  "description": "Comfortable cotton sweatpants",
+  "rating": 4.5,
+  "stock": 85,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Pants"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb4"
+  },
+  "price": 48.99,
+  "brand": "Mango",
+  "quantity": 8,
+  "description": "Stylish summer dress",
+  "rating": 4.7,
+  "stock": 40,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Dresses"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb5"
+  },
+  "price": 26.99,
+  "brand": "Jockey",
+  "quantity": 15,
+  "description": "Comfortable cotton boxer shorts",
+  "rating": 4.4,
+  "stock": 105,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Underwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb6"
+  },
+  "price": 56.99,
+  "brand": "Burberry",
+  "quantity": 7,
+  "description": "Warm wool scarf",
+  "rating": 4.6,
+  "stock": 35,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb7"
+  },
+  "price": 19.99,
+  "brand": "Abercrombie & Fitch",
+  "quantity": 23,
+  "description": "Casual cotton tank top",
+  "rating": 4.3,
+  "stock": 140,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Tops"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb8"
+  },
+  "price": 35.99,
+  "brand": "Dockers",
+  "quantity": 13,
+  "description": "Comfortable cotton joggers",
+  "rating": 4.5,
+  "stock": 75,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Pants"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eb9"
+  },
+  "price": 45.99,
+  "brand": "Steve Madden",
+  "quantity": 10,
+  "description": "Stylish summer sandals",
+  "rating": 4.7,
+  "stock": 50,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Footwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74eba"
+  },
+  "price": 24.99,
+  "brand": "Hanes",
+  "quantity": 17,
+  "description": "Comfortable cotton underwear",
+  "rating": 4.4,
+  "stock": 100,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Underwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ebb"
+  },
+  "price": 53.99,
+  "brand": "Canada Goose",
+  "quantity": 8,
+  "description": "Warm fleece jacket",
+  "rating": 4.6,
+  "stock": 35,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Jackets"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ebc"
+  },
+  "price": 22.99,
+  "brand": "Uniqlo",
+  "quantity": 20,
+  "description": "Comfortable cotton tank top",
+  "rating": 4.3,
+  "stock": 110,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Tops"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ebd"
+  },
+  "price": 34.99,
+  "brand": "Banana Republic",
+  "quantity": 14,
+  "description": "Stylish summer shorts",
+  "rating": 4.5,
+  "stock": 65,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Shorts"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ebe"
+  },
+  "price": 44.99,
+  "brand": "Brooks Brothers",
+  "quantity": 11,
+  "description": "Elegant silk tie",
+  "rating": 4.7,
+  "stock": 45,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ebf"
+  },
+  "price": 28.99,
+  "brand": "J.Crew",
+  "quantity": 16,
+  "description": "Comfortable cotton briefs",
+  "rating": 4.4,
+  "stock": 95,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Underwear"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ec0"
+  },
+  "price": 57.99,
+  "brand": "Moncler",
+  "quantity": 9,
+  "description": "Warm wool hat",
+  "rating": 4.6,
+  "stock": 30,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Accessories"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ec1"
+  },
+  "price": 21.99,
+  "brand": "American Eagle",
+  "quantity": 22,
+  "description": "Casual cotton t-shirt",
+  "rating": 4.3,
+  "stock": 130,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "T-Shirts"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ec2"
+  },
+  "price": 39.99,
+  "brand": "Nike",
+  "quantity": 12,
+  "description": "Comfortable cotton sweatpants",
+  "rating": 4.5,
+  "stock": 85,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Pants"
+},
+{
+  "_id": {
+    "$oid": "673a50e4693501de68f74ec3"
+  },
+  "price": 49.99,
+  "brand": "Levi's",
+  "quantity": 10,
+  "description": "Stylish summer dress",
+  "rating": 4.7,
+  "stock": 40,
+  "image": "https://via.placeholder.com/600x400/000/eee",
+  "category": "Dresses"
+}]
