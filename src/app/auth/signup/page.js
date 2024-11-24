@@ -124,6 +124,14 @@ const SignupPage = () => {
               className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
             />
           </div>
+          <div className="text-sm grid">
+            <a
+              href="/auth/signin"
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
+              Already a user?
+            </a>
+          </div>
           <button
             type="submit"
             className="w-full px-4 py-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

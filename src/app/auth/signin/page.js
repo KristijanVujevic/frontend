@@ -105,12 +105,18 @@ const SignIn = () => {
               </label>
             </div>
 
-            <div className="text-sm">
+            <div className="text-sm grid">
               <a
                 href="#"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
                 Forgot your password?
+              </a>
+              <a
+                href="/auth/signup"
+                className="font-medium text-red-600 hover:text-red-500"
+              >
+                Don't have an account?
               </a>
             </div>
           </div>
