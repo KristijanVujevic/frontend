@@ -87,7 +87,7 @@ const UserProfile = () => {
         <div className="flex items-center space-x-4">
           <img
             className="w-16 h-16 rounded-full"
-            src={"https://via.placeholder.com/150"}
+            src={"https://avatar.iran.liara.run/public"}
             alt="User Avatar"
           />
           <div>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { MongoClient, ObjectId } from "mongodb";
 import jwt from "jsonwebtoken";
+import { checkAuthStatus } from "@/app/redux/slices/authSlice";
 
 // Environment variables
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/shop";
@@ -8,6 +9,22 @@ const MONGO_DB = process.env.MONGO_DB || "shop";
 const JWT_SECRET = process.env.JWT_SECRET || "SAiLr99GdupQjmWQKU8a2nikMuU7gTHb";
 
 let cachedClient = null;
+
+// Helper function to verify token
+async function verifyToken(request) {
+  const authHeader = request.headers.get("Authorization");
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    throw new Error("Missing or invalid authorization header");
+  }
+
+  const token = authHeader.split(" ")[1];
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    return decoded; // Return the decoded token
+  } catch (error) {
+    throw new Error("Invalid token");
+  }
+}
 
 // Connect to MongoDB
 async function connectToDatabase() {
@@ -27,27 +44,10 @@ async function connectToDatabase() {
 // GET: Fetch user data by ID
 export async function GET(request) {
   try {
+    const decoded = await verifyToken(request); // Verify token and get decoded info
+
     const client = await connectToDatabase();
     const db = client.db(MONGO_DB);
-
-    // Extract the token from the Authorization header
-    const authHeader = request.headers.get("Authorization");
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return NextResponse.json(
-        { error: "Missing or invalid authorization header" },
-        { status: 401 }
-      );
-    }
-
-    const token = authHeader.split(" ")[1];
-
-    // Verify and decode the JWT
-    let decoded;
-    try {
-      decoded = jwt.verify(token, JWT_SECRET);
-    } catch (error) {
-      return NextResponse.json({ error: "Invalid token" }, { status: 401 });
-    }
 
     const userId = decoded.id; // Extract the user ID from the token payload
 
@@ -77,7 +77,43 @@ export async function GET(request) {
   } catch (error) {
     console.error("Failed to fetch user data:", error);
     return NextResponse.json(
-      { error: "Failed to fetch user data" },
+      { error: error.message || "Failed to fetch user data" },
+      { status: 500 }
+    );
+  }
+}
+
+// DELETE: Delete user by ID
+export async function DELETE(request) {
+  try {
+    const decoded = await verifyToken(request); // Verify token and get decoded info
+    const client = await connectToDatabase();
+    const db = client.db(MONGO_DB);
+
+    // Extract the user ID to delete from the request URL
+    const url = new URL(request.url);
+    const idToDelete = url.pathname.split("/").pop();
+
+    // Convert `idToDelete` to an ObjectId
+    const userObjectIdToDelete = new ObjectId(idToDelete);
+
+    // Delete the user from the database
+    const result = await db
+      .collection("users")
+      .deleteOne({ _id: userObjectIdToDelete });
+
+    if (result.deletedCount === 0) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(
+      { success: true, message: "User deleted successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Failed to delete user:", error);
+    return NextResponse.json(
+      { error: error.message || "Failed to delete user" },
       { status: 500 }
     );
   }

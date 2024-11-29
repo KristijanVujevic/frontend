@@ -14,7 +14,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="border p-4 rounded-lg shadow-lg">
               <Image
-                src={"https://via.placeholder.com/600x400/000/eee"}
+                src={"https://picsum.photos/id/312/600/400"}
                 alt="Featured Item 1"
                 width={300}
                 height={200}
@@ -27,7 +27,7 @@ export default function Home() {
             </div>
             <div className="border p-4 rounded-lg shadow-lg">
               <Image
-                src={"https://via.placeholder.com/600x400/000/eee"}
+                src={"https://picsum.photos/id/122/600/400"}
                 alt="Featured Item 2"
                 width={300}
                 height={200}
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
             <div className="border p-4 rounded-lg shadow-lg">
               <Image
-                src={"https://via.placeholder.com/600x400/000/eee"}
+                src={"https://picsum.photos/id/14/600/400"}
                 alt="Featured Item 3"
                 width={300}
                 height={200}

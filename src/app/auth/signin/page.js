@@ -1,19 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter for client-side navigation
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/slices/authSlice";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); // To handle any login errors
+  const [error, setError] = useState("");
 
-  const router = useRouter(); // Initialize the useRouter hook
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Reset error before new submission
     setError("");
 
     try {
@@ -26,20 +27,22 @@ const SignIn = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      // Parse the response
       const data = await response.json();
 
       if (response.ok) {
-        // If the login is successful, store the JWT token (and user info, if necessary)
-        localStorage.setItem("token", data.token);
+        // On successful login, save token to localStorage and dispatch login action
+        localStorage.setItem("token", data.token); // Save token in localStorage
 
+        // Dispatch login action to update Redux state
+        dispatch(login({ token: data.token }));
+
+        // Navigate to the homepage or dashboard
         router.push("/");
       } else {
-        // If login fails, set the error message
+        // Handle login failure
         setError(data.error || "Login failed");
       }
     } catch (err) {
-      // Handle general errors (like network issues)
       setError("An unexpected error occurred. Please try again.");
       console.error("Error during login:", err);
     }
@@ -88,7 +91,8 @@ const SignIn = () => {
               />
             </div>
           </div>
-          {/* add functions to remember me and fyp */}
+
+          {/* Remember Me & Forgot Password Links */}
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <input
