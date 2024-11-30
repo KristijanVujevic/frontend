@@ -236,8 +236,8 @@ export default function ProductsPage() {
               </div>
             ) : null}
 
-            <h2 className="text-xl font-semibold mt-2">{product.name}</h2>
             <h3 className="text-xl font-semibold mt-2">{product.brand}</h3>
+            <h2 className="text-xl font-semibold mt-2">{product.name}</h2>
             <p className="text-lg font-bold">${product.price}</p>
             <p className="mt-2 text-sm">{product.description}</p>
 

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/slices/authSlice";
 const SignupPage = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -10,6 +12,7 @@ const SignupPage = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,6 +51,7 @@ const SignupPage = () => {
         if (data.token) {
           // Store the JWT token in localStorage
           localStorage.setItem("token", data.token);
+          dispatch(login({ token: data.token }));
 
           // Set a success message or redirect the user to another page
           setSuccessMessage("Signup successful! You are now logged in.");
