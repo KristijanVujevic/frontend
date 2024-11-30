@@ -22,7 +22,7 @@ async function verifyToken(request) {
   const token = authHeader.split(" ")[1];
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    return decoded; // Return the decoded token
+    return decoded;
   } catch (error) {
     throw new Error("Invalid token");
   }
@@ -116,6 +116,47 @@ export async function DELETE(request) {
     console.error("Failed to delete user:", error);
     return NextResponse.json(
       { error: error.message || "Failed to delete user" },
+      { status: 500 }
+    );
+  }
+}
+// PATCH: Update username of the user by ID
+export async function PATCH(request) {
+  try {
+    const decoded = await verifyToken(request); // Verify token and get decoded info
+    const client = await connectToDatabase();
+    const db = client.db(MONGO_DB);
+
+    const userId = decoded.id; // Extract the user ID from the token payload
+
+    // Convert `userId` to an ObjectId
+    const userObjectId = new ObjectId(userId);
+
+    // Parse the request body to get the new username
+    const body = await request.json();
+    const { username } = body;
+
+    if (!username || typeof username !== "string") {
+      return NextResponse.json({ error: "Invalid username" }, { status: 400 });
+    }
+
+    // Update the username in the database
+    const result = await db
+      .collection("users")
+      .updateOne({ _id: userObjectId }, { $set: { username } });
+
+    if (result.matchedCount === 0) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(
+      { success: true, message: "Username updated successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Failed to update username:", error);
+    return NextResponse.json(
+      { error: error.message || "Failed to update username" },
       { status: 500 }
     );
   }
