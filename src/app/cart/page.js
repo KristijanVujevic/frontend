@@ -55,9 +55,12 @@ const CartPage = () => {
                 className="flex justify-between items-center mb-4"
               >
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-600">
-                    {item.name}
-                  </h2>
+                  <span>
+                    <h2 className="text-lg font-semibold text-gray-600">
+                      {item.name || item.brand}
+                    </h2>
+                    <p className="text-lg text-gray-400">{item.description}</p>
+                  </span>
                   <p className="text-gray-600">Quantity: {item.quantity}</p>
                   <button
                     onClick={() => handleRemoveFromCart(item.id)}
