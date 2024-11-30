@@ -4,7 +4,9 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 // Fetch MongoDB URI and DB from environment variables
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/shop";
+const MONGO_URI =
+  process.env.MONGO_URI ||
+  "mongodb+srv://kristijan:R8jupOPJFDIrRgZu@shopdys.gf9pk.mongodb.net/?retryWrites=true&w=majority&appName=shopdys";
 const MONGO_DB = process.env.MONGO_DB || "shop";
 const JWT_SECRET = process.env.JWT_SECRET || "SAiLr99GdupQjmWQKU8a2nikMuU7gTHb"; // Add a secret for signing the JWT
 
