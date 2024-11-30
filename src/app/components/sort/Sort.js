@@ -14,6 +14,9 @@ const Sort = ({ onSortChange }) => {
     } else if (type === "priceHighToLow") {
       sortBy = "price";
       sortOrder = "desc";
+    } else if (type === "ratingHighToLow") {
+      sortBy = "rating";
+      sortOrder = "desc";
     }
 
     // Pass sorting parameters back to the parent component
@@ -39,6 +42,12 @@ const Sort = ({ onSortChange }) => {
         onClick={() => handleSort("priceHighToLow")}
       >
         Price High to Low
+      </button>
+      <button
+        className="px-4 py-2 bg-gray-200 rounded text-gray-800"
+        onClick={() => handleSort("ratingHighToLow")}
+      >
+        Rating Ascending
       </button>
     </div>
   );

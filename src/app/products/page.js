@@ -240,6 +240,7 @@ export default function ProductsPage() {
             <h2 className="text-xl font-semibold mt-2">{product.name}</h2>
             <p className="text-lg font-bold">${product.price}</p>
             <p className="mt-2 text-sm">{product.description}</p>
+            <h3 className="text-lg font-semibold mt-2"> {product.rating} ☆</h3>
 
             <button
               onClick={() => handleAddToCart(product)}
