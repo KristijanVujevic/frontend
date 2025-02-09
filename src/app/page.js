@@ -1,6 +1,6 @@
 import Image from "next/image";
 function getRandomInt() {
-  return Math.floor(Math.random() * 1000);
+  return Math.floor(Math.random() * (500 - 1 + 1)) + 1;
 }
 export default function Home() {
   return (

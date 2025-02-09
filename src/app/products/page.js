@@ -1,6 +1,8 @@
+// app/products/page.js
+
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addItemToCart,
@@ -96,6 +98,16 @@ function LikeButton({ productId }) {
 
 // Main ProductsPage component
 export default function ProductsPage() {
+  return (
+    <Suspense
+      fallback={<p className="text-center text-lg">Loading products...</p>}
+    >
+      <ProductsPageContent />
+    </Suspense>
+  );
+}
+
+function ProductsPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const dispatch = useDispatch();

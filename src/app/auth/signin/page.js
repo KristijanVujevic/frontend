@@ -120,7 +120,7 @@ const SignIn = () => {
                 href="/auth/signup"
                 className="font-medium text-red-600 hover:text-red-500"
               >
-                Don't have an account?
+                Don`&apos;`t have an account?
               </a>
             </div>
           </div>
